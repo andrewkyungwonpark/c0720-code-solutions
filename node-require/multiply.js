@@ -1,3 +1,5 @@
-const multiply = (x, y) => x * y;
+function multiply(x, y) {
+  return x * y;
+}
 
-module.exports.multiply = multiply;
+module.exports = multiply;

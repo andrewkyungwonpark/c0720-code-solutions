@@ -1,3 +1,5 @@
-const divide = (x, y) => x / y;
+function divide(x, y) {
+  return x / y;
+}
 
-module.exports.divide = divide;
+module.exports = divide;
