@@ -4,7 +4,7 @@ const data = require('./data.json');
 
 function err() {
   if (err) {
-    return err;
+    console.log(err);
   }
 }
 
