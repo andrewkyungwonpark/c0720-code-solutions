@@ -78,20 +78,14 @@ app.delete('/api/notes/:id', (req, res) => {
     return;
   }
 
-  const note = {
-    id: data.nextId,
-    content: req.body.content
-  };
-  data.notes[data.nextId] = note;
-
-  delete data.notes[userId];
-
-  if (typeof note === 'undefined') {
+  if (typeof data.notes[userId] === 'undefined') {
     res.status(404).json({
       error: `cannot find note with id ${userId}`
     });
     return;
   }
+
+  delete data.notes[userId];
 
   const json = JSON.stringify(data, null, 2);
   fs.writeFile('./data.json', json, err => {
@@ -102,8 +96,7 @@ app.delete('/api/notes/:id', (req, res) => {
       });
       return;
     }
-
-    res.status(204);
+    res.sendStatus(204);
   });
 
 });
