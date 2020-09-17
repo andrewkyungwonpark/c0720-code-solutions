@@ -6,8 +6,7 @@ class Stopwatch extends React.Component {
     super(props);
     this.state = {
       isRunning: false,
-      seconds: 0,
-      icon: 'fas fa-play'
+      seconds: 0
     };
     this.startTimer = this.startTimer.bind(this);
     this.resetTimer = this.resetTimer.bind(this);
