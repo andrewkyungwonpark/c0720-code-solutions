@@ -16,8 +16,7 @@ class Stopwatch extends React.Component {
   startTimer(event) {
     if (!this.state.isRunning) {
       this.setState({
-        isRunning: true,
-        icon: 'fas fa-pause'
+        isRunning: true
       });
       this.timerID = setInterval(() => {
         this.setState({
@@ -29,8 +28,7 @@ class Stopwatch extends React.Component {
       clearInterval(this.timerID);
       this.setState({
         isRunning: false,
-        seconds: this.state.seconds,
-        icon: 'fas fa-play'
+        seconds: this.state.seconds
       });
     }
   }
@@ -42,14 +40,25 @@ class Stopwatch extends React.Component {
   }
 
   render() {
-    return (
-      <>
-        <div className="container" onClick={this.resetTimer}>
-          <div className="timer-display">{this.state.seconds}</div>
-        </div>
-        <i className={this.state.icon} onClick={this.startTimer}></i>
-      </>
-    );
+    if (this.state.isRunning) {
+      return (
+        <>
+          <div className="container" onClick={this.resetTimer}>
+            <div className="timer-display">{this.state.seconds}</div>
+          </div>
+          <i className="fas fa-play" onClick={this.startTimer}></i>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className="container" onClick={this.resetTimer}>
+            <div className="timer-display">{this.state.seconds}</div>
+          </div>
+          <i className="fas fa-pause" onClick={this.startTimer}></i>
+        </>
+      );
+    }
   }
 }
 
