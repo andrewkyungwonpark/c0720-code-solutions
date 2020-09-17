@@ -1,0 +1,45 @@
+.box {
+  display: flex;
+}
+
+.outer-on {
+  position: relative;
+  border-radius: 50%;
+  height: 5rem;
+  width: 10rem;
+  background-color: green;
+  border: 1px solid black;
+}
+
+.outer-off {
+  position: relative;
+  border-radius: 50%;
+  height: 5rem;
+  width: 10rem;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.on {
+  background-color: grey;
+  position: absolute;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  right: 0;
+}
+
+.off {
+  background-color: grey;
+  position: absolute;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  left: 0;
+}
+
+.text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28pt;
+  margin-top: 5rem;
+}
