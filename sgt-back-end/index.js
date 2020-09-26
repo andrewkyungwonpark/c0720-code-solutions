@@ -49,15 +49,9 @@ app.post('/api/grades', (req, res) => {
   ];
   db.query(sql, params)
     .then(result => {
-      const grade = result.rows[0];
-      if (!grade) {
-        res.status(404).json({
-          error: 'Cannot add invalid grade'
-        });
-      } else {
-        res.status(201).json(grade);
-      }
-    })
+      res.status(201).json(grade);
+    }
+    )
     .catch(err => {
       console.error(err);
       res.status(500).json({
